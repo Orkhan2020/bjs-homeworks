@@ -22,7 +22,6 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     let P = (percent / 100) * 1 / 12;
     let N = 12 * (date.getFullYear() - new Date().getFullYear()) + (date.getMonth() + 1) - (new Date().getMonth() + 1);
     console.log(`Количество месяцев выплаты ипотеки ${N}`);
-    // Платеж = S * ( P + P / ( (  ( 1 + P ) ^ n ) - 1 ) )
     let totalAmount = N * (S * (P + P / ((Math.pow((1 + P), N)) - 1)));
     console.log(`Сумма выплаты ипотеки составляет : ` + totalAmount.toFixed(2) + `руб. Осталось месяцев оплаты ${N}`);
     return parseFloat(totalAmount.toFixed(2));
